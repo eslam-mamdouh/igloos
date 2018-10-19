@@ -17,7 +17,8 @@ class Reservations extends Migration
             $table->increments('id');
             $table->date('date');
             $table->time('time');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->integer('people_num');
             $table->integer('room_num');
             $table->integer('space_id');
@@ -32,6 +33,6 @@ class Reservations extends Migration
      */
     public function down()
     {
-       
+        
     }
 }

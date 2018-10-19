@@ -13,9 +13,10 @@ class SpaceImgs extends Migration
      */
     public function up()
     {
-        Schema::create('SpaceImgs', function (Blueprint $table) {
+        Schema::create('spaceImgs', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('space_id');
+            $table->foreign('space_id')->references('id')->on('spaces');
             $table->integer('img_url');
             $table->timestamps();
         });

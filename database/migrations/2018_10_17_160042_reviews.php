@@ -13,11 +13,13 @@ class Reviews extends Migration
      */
     public function up()
     {
-        Schema::create('Reviews', function (Blueprint $table) {
-     $table->increments('id');
-     $table->integer('user_id');
-     $table->string('comment');
-     $table->integer('space_id');
+        Schema::create('reviews', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('comment');
+            $table->integer('space_id');
+            $table->foreign('space_id')->references('id')->on('spaces');
         });
 
     }
