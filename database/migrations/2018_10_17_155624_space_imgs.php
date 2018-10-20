@@ -15,7 +15,7 @@ class SpaceImgs extends Migration
     {
         Schema::create('spaceImgs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('space_id');
+            $table->integer('space_id')->unsigned();
             $table->foreign('space_id')->references('id')->on('spaces');
             $table->integer('img_url');
             $table->timestamps();
@@ -29,6 +29,6 @@ class SpaceImgs extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('spaceImgs');
     }
 }

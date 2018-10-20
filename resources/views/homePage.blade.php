@@ -21,8 +21,8 @@
     </head>
 
  <body>
+        {{--  <div style="background:#FFF ;margin-top:150px">{{$users}}</div>  --}}
         @include('navbar')
-
         <section id="intro-section">
             <div class="intro-content">
             <p class="introHeader">Booking now at your fingertips</p>

@@ -1,18 +1,7 @@
-<!doctype html>
-<html>
-    <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-        <link rel="stylesheet" type="text/css" href="css\profile_settings.css">
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 
-    </head>
-    <body >
-         
+@extends('master')
+@section('content')
+        
     <div id="topNavbar">
             <div id="Logo"></div>
                  <div class="navbar-btns">
@@ -30,7 +19,7 @@
         <form method="post">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="images/profile-img">
+                    <div class="profile-img">
                         <img src="images/images.jpg" alt="" class="img-circle"/>
                         <button class="btn_"><i class="fa fa-camera"></i>
                      <input type="file"class="file form-control-file">  </button> 
@@ -79,20 +68,12 @@
                 <div class=" right col-md-8" >
                     <div class="tab-content profile-tab" id="myTabContent">
                         <div class="tab-pane fade in active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                    <div class="row" >
-                                        <div class="col-md-6" style=" width: 150px;">
-                                            <label>User Id</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>Mohga123</p>
-                                        </div>
-                                    </div>
                                     <div class="row">
                                         <div class="col-md-6"  style=" width: 150px;">
                                             <label>Name</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <p>Mohga Yasser</p>
+                                            <p>{{$user->first_name . " ". $user->last_name}}</p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -100,7 +81,7 @@
                                             <label>Email</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <p>migoyasserg@gmail.com</p>
+                                            <p>{{$user->email}}</p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -108,7 +89,7 @@
                                             <label>Phone</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <p>123 456 7890</p>
+                                            <p>{{$user->phone}}</p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -181,33 +162,33 @@
                 </div>
   </div>
   <div  class=" tab-pane fade" id="setting" role="tabpanel" aria-labelledby="setting-tab">
-        <form>
+        <form action="/profile/update/{{$user->id}}" method="POST">
                 <div class="form-row">
                   <div  class="col-md-6">
-                    <input type="text" class="form-control" placeholder="First name">
+                    <input type="text" class="form-control" name="first_name" placeholder="First name" value="{{$user->first_name}}">
                   </div>
                   <div  class="col-md-6">
-                    <input type="text" class="form-control" placeholder="Last name">
+                    <input type="text" class="form-control" name="last_name" placeholder="Last name" value="{{$user->last_name}}">
                   </div>
                 </div>
                   <br>
                   <div class="form-group">
                       <br>
                       <br>
-                        <input type="password"  class="password form-control"placeholder="password" >
+                        <input type="password"  class="password form-control" name="password" placeholder="password" value="{{$user->password}}">
                         <small id="passwordHelpInline" class="text-muted" >
                           Must be 8-20 characters long.
                         </small>
                         
                         <br>
                         <br>
-                        <input type="email"  class="password form-control"placeholder="E-mail" >
+                        <input type="email"  class="password form-control" name="email" placeholder="E-mail" value="{{$user->email}}">
                         <br>
                         <br>
                         <input type="text"  class="password form-control"placeholder="College" >
                         <br>
                         <br>
-                        <input type="number"  class="password form-control"placeholder="Phone" >
+                        <input type="number"  class="password form-control" name="phone" placeholder="Phone" value="{{$user->phone}}" >
                         <br>
                         <br>
                         <textarea class="area form-control" placeholder="Biography" rows="7" ></textarea>
@@ -216,7 +197,7 @@
                                             <br>
                                             <br>
                                           <div>
-                                                <button class="button">Update</button>
+                                                <button class="button" type="submit">Update</button>
                                           </div>
               </form>
                 </div>                          
@@ -229,9 +210,4 @@
                     </div>
                 </form> 
                 </div>
-                <footer class="page-footer"> 
-                        <p class="footer-txt1">Lovingly crafted in Cairo, EG.</p>
-                    </footer>
-           
-    </body>
-</html>
+@endsection

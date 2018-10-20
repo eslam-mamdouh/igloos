@@ -25,6 +25,6 @@ Route::get('/signup', function () {
 Route::get('/space', function () {
     return view('working_space');
 });
-Route::get('/profile', function () {
-    return view('profile_settings');
-});
+Route::get('/profile/{id}','userController@userProfile');
+Route::get('/profile/update/{id}','userController@profileUpdate');
+

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class review extends Model
 {   
  
-    protected $table="Reviews";
+    protected $table="reviews";
     
     protected $fillable=[ 
         'id','user_id','comment','space_id'
