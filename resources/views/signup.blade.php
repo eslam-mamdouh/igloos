@@ -22,27 +22,40 @@
     <body>
          @include('navbar')
         <div class="container">
-            <form class="form-inline" role="form"> 
+            <form class="form-inline" role="form" method="POST" action="{{ url('/register') }}"> 
+                {{ csrf_field() }}
+                @if(count($errors) > 0)
+                @foreach($errors->all() as $error)
+                <div class="col-alert alert-danger">{{$error}}</div>
+                @endforeach
+                @endif
+
+                @if(@session('response'))
+                <div class="col-md-8 alert alert-success">{{@session('success')}}</div>
+                @endif
                 <h1>Sign Up</h1><br><br>
                  <label for="firstName" class="mb-2 mr-sm-2">First Name:</label><br>
-                <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Enter First Name" id="firstName">
+                <input type="text" name="Fname" class="form-control mb-2 mr-sm-2" placeholder="Enter First Name" id="firstName">
                 <br><br>
                 <label for="lastName" class="mb-2 mr-sm-2">Last Name:</label><br>
-                <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Enter Last Name" id="lastName">
+                <input type="text"  name="Lname" class="form-control mb-2 mr-sm-2" placeholder="Enter Last Name" id="lastName">
                 <br><br>
                 <label for="Username" class="mb-2 mr-sm-2">Username:</label><br>
-                <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Enter Username" id="Username">
+                <input type="text"  name="username" class="form-control mb-2 mr-sm-2" placeholder="Enter Username" id="Username">
                 <br><br>
                 <label for="email" class="mb-2 mr-sm-2">E-mail:</label><br>
-                <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Enter E-mail" id="email">
+                <input type="text"  name="email" class="form-control mb-2 mr-sm-2" placeholder="Enter E-mail" id="email">
+                <br><br>
+                <label for="phone" class="mb-2 mr-sm-2">Phone:</label><br>
+                <input type="text" name="phone" class="form-control mb-2 mr-sm-2" placeholder="Enter your phone number" id="phone">
                 <br><br>
                 <label for="password" class="mb-2 mr-sm-2">Password:</label><br>
-                <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Enter Password" id="password">
+                <input type="text"  name="password" class="form-control mb-2 mr-sm-2" placeholder="Enter Password" id="password">
                 <br><br>
                 <label for="conpassword" class="mb-2 mr-sm-2">Confirm-Password:</label><br>
-                <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Re-Enter Password" id="conpassword">
+                <input type="text" name="Conpassword" class="form-control mb-2 mr-sm-2" placeholder="Re-Enter Password" id="conpassword">
                 <br><br>
-                <button class="btn btn-default" id="btn-login">Sign up</button>
+                <button type="submit" class="btn btn-default" id="btn-login">Sign up</button>
             </form>
         </div>
          @include('footer')

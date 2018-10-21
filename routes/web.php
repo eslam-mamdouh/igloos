@@ -12,16 +12,19 @@
 */
 
 
-Route::get('/', 'userController@get_all_users');
-// Route::get('/', function () {
-//     return view('homePage');
-// });
+
+ Route::get('/', function () {
+     return view('homePage');
+ });
 Route::get('/login', function () {
     return view('login');
 });
-Route::get('/signup', function () {
+/*Route::get('/signup', function () {
     return view('signup');
-});
+});*/
+
+Route::post('/register','/registerController@register');
+
 Route::get('/space', function () {
     return view('working_space');
 });
