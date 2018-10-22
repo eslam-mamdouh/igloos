@@ -19,9 +19,9 @@
 Route::get('/login', function () {
     return view('login');
 });
-/*Route::get('/signup', function () {
+Route::get('/signup', function () {
     return view('signup');
-});*/
+});
 
 Route::post('/register','/registerController@register');
 
@@ -31,3 +31,8 @@ Route::get('/space', function () {
 Route::get('/profile/{id}','userController@userProfile');
 Route::get('/profile/update/{id}','userController@profileUpdate');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/verify/{token}','verifyController@verify')->name('verify');

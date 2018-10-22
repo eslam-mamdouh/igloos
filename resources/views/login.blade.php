@@ -35,6 +35,7 @@
                 </div>
                 <br><br>
                 <button class="btn btn-default" id="btn-login">Log in</button>
+                <a href="#">Forget Your Password</a>
                 <br><br>
                 <a id="signup-link" href="#">Sign up</a>
             </form>
