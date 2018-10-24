@@ -162,7 +162,8 @@
                 </div>
   </div>
   <div  class=" tab-pane fade" id="setting" role="tabpanel" aria-labelledby="setting-tab">
-        <form action="/profile/update/{{$user->id}}" method="POST">
+        <form method="POST" action="update/{{$user->id}}">
+                {{ csrf_field() }}
                 <div class="form-row">
                   <div  class="col-md-6">
                     <input type="text" class="form-control" name="first_name" placeholder="First name" value="{{$user->first_name}}">

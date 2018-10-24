@@ -26,5 +26,5 @@ Route::get('/space', function () {
     return view('working_space');
 });
 Route::get('/profile/{id}','userController@userProfile');
-Route::get('/profile/update/{id}','userController@profileUpdate');
+Route::post('/profile/update/{id}','userController@profileUpdate');
 

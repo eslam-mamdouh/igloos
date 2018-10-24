@@ -33,6 +33,9 @@ class userController extends Controller
         $user->password     = $req->password ;
         $user->phone        = $req->phone;
         $user->update();
-        return view('profile_settings');
+       
+        return redirect('profile/'.$id);
+        
+        // return view('profile_settings' , ['user'=>$user]);
     }
 }
