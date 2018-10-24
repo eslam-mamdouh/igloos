@@ -25,16 +25,17 @@
             <form class="form-inline" role="form"> 
                 <h1>Log in</h1><br><br>
                 <label for="Username" class="mb-2 mr-sm-2">Username:</label><br>
-                <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Enter Username" id="Username">
+                <input type="text" name="username" class="form-control mb-2 mr-sm-2" placeholder="Enter Username" id="Username">
                 <br><br>
                 <label for="password" class="mb-2 mr-sm-2">Password:</label><br>
-                <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Enter Password" id="password">
+                <input type="text" name="password" class="form-control mb-2 mr-sm-2" placeholder="Enter Password" id="password">
                 <br><br>
                 <div class="form-check mb-2 mr-sm-2">
                     <label class="form-check-label"><input class="form-check-input" type="checkbox">Remember me</label>
                 </div>
                 <br><br>
                 <button class="btn btn-default" id="btn-login">Log in</button>
+                <a href="#">Forget Your Password</a>
                 <br><br>
                 <a id="signup-link" href="#">Sign up</a>
             </form>

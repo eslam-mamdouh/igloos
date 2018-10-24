@@ -12,19 +12,27 @@
 */
 
 
-Route::get('/', 'userController@get_all_users');
-// Route::get('/', function () {
-//     return view('homePage');
-// });
+
+ Route::get('/', function () {
+     return view('homePage');
+ });
 Route::get('/login', function () {
     return view('login');
 });
 Route::get('/signup', function () {
     return view('signup');
 });
+
+Route::post('/register','/registerController@register');
+
 Route::get('/space', function () {
     return view('working_space');
 });
 Route::get('/profile/{id}','userController@userProfile');
 Route::post('/profile/update/{id}','userController@profileUpdate');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/verify/{token}','verifyController@verify')->name('verify');
