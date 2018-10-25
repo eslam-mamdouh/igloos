@@ -162,7 +162,7 @@
                 </div>
   </div>
   <div  class=" tab-pane fade" id="setting" role="tabpanel" aria-labelledby="setting-tab">
-        <form action="/profile/update/{{$user->id}}" method="POST">
+        <form action="update/{{$user->id}}" method="POST">
                 <div class="form-row">
                   <div  class="col-md-6">
                     <input type="text" class="form-control" name="first_name" placeholder="First name" value="{{$user->first_name}}">
