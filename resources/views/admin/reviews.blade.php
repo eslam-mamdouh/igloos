@@ -8,7 +8,6 @@
 
     <div class="row">
     <div class="col-lg-12">
-        <button class="btn btn-success" data-toggle="modal" data-target="#myModal">Add New User</button>
         <br><br>
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -21,6 +20,7 @@
                 <div class="row">
                     <div class="row">
                         <div class="col-sm-12">
+<<<<<<< HEAD
                            
                             <table class="table table-hover">
                                 <thead>
@@ -42,6 +42,38 @@
                                     </tbody>
                                 </table>
                             {{$reviews->links()}}
+=======
+                                <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <td>#ID</td>
+                                                <td>Review</td>
+                                                <td>User ID</td>
+                                                <td>Space Id</td>
+                                                <td>Actions</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+        
+                                            @foreach ($reviews as $rev )
+                                                <tr>
+                                                    <td>{{$rev->id}}</td>
+                                                    <td>{{$rev->comment}}</td>
+                                                    <td>{{$rev->user_id}}</td>
+                                                    <td>{{$rev->space_id}}</td>
+                                                    <td>{{$rev->created_at}}</td>
+                                                    <td>
+                                                        <a class="btn btn-primary" href="space/{{$rev->id}}/edit">edit</a>
+                                                        <a class="btn btn-danger" href="space/{{$rev->id}}/delete">delete</a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+        
+                                        </tbody>
+        
+                                    </table>
+                                    {{$reviews->links()}}
+>>>>>>> 35a9be1a99cc5716d5d0addf82ab6d99f17f13c6
 
                         </div>
                     </div>
