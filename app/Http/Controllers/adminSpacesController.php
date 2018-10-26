@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\space;
+use App\review;
 class adminSpacesController extends Controller
 {
     //
@@ -43,5 +44,10 @@ class adminSpacesController extends Controller
 
             abort(404);
         }
+    }
+
+    public function getReviews(){
+        $reviews = review::paginate(5);
+        return view('admin.reviews' , ['reviews'=>$reviews]);
     }
 }

@@ -23,4 +23,16 @@ class adminUsersController extends Controller
             abort(404);
         }
     }
+
+    public function deleteReview($id){
+        $review = review::find($id);
+
+        if($id){
+           $review->delete();
+           return redirect("/admin/spaces");
+        }
+        else{
+            abort(404);
+        }
+    }
 }

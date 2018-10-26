@@ -31,9 +31,10 @@ Route::get('/admin/users', 'adminUsersController@getUsers')->middleware('auth');
 Route::get('/admin/user/{id}/delete', 'adminUsersController@delete')->middleware('auth');
 
 Route::get('/admin/spaces', 'adminSpacesController@getSpaces')->middleware('auth');
+Route::get('/admin/reviews', 'adminSpacesController@getReviews')->middleware('auth');
 Route::post('/admin/spaces/add', 'adminSpacesController@addSpace')->middleware('auth');
 Route::get('/admin/space/{id}/delete', 'adminSpacesController@delete')->middleware('auth');
-
+Route::get('/admin/reviews/{id}/deleteReview', 'adminUsersController@deleteReview')->middleware('auth');
 
 Route::get('/mohga', function () {
     $reviews = App\review::all();
