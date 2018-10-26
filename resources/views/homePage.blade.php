@@ -1,3 +1,4 @@
+{{--  {{Auth::logout()}}  --}}
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>

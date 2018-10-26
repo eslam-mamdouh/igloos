@@ -15,12 +15,29 @@
 
  Route::get('/', function () {
      return view('homePage');
- });
+ })->middleware('auth');
+
 Route::get('/logina', function () {
     return view('login');
-});
+})->name("logina");
+
 Route::get('/signup', function () {
     return view('signup');
+});
+
+Route::get('/logout', 'userController@logout');
+
+Route::get('/admin/users', 'adminUsersController@getUsers')->middleware('auth');
+Route::get('/admin/user/{id}/delete', 'adminUsersController@delete')->middleware('auth');
+
+Route::get('/admin/spaces', 'adminSpacesController@getSpaces')->middleware('auth');
+Route::post('/admin/spaces/add', 'adminSpacesController@addSpace')->middleware('auth');
+Route::get('/admin/space/{id}/delete', 'adminSpacesController@delete')->middleware('auth');
+
+
+Route::get('/mohga', function () {
+    $reviews = App\review::all();
+    return view('mohga' , ['reviews'=>$reviews]);
 });
 
 Route::get('/reg', function () {

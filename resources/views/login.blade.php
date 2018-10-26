@@ -1,3 +1,6 @@
+{{--  @if (!Auth::check())
+    
+@endif  --}}
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -20,7 +23,7 @@
   
     </head>
     <body>
-         @include('navbar')
+         {{--  @include('navbar')  --}}
         <div class="container">
             <form class="form-inline" role="form" action="dologin" method="POST"> 
                 @csrf
@@ -51,6 +54,6 @@
                 <a id="signup-link" href="#">Sign up</a>
             </form>
         </div>
-         @include('footer')
+         {{--  @include('footer')  --}}
     </body>
 </html>

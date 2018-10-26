@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 class userController extends Controller
 {
 
+    public function logout(){
+        Auth::logout();
+        return view('login');
+    }
+
     public function signup(Request $req){
 
         $this->validate($req,
@@ -48,7 +53,11 @@ class userController extends Controller
         $user = User::where("email" , $email)->where("password" , $pass)->get()->first();
         if($user){
             Auth::login($user);
-            return redirect("/");
+            if($user->role == "client"){
+                return redirect("/");
+            }else{
+                return redirect("/admin/spaces");
+            }
         }
 
     }
