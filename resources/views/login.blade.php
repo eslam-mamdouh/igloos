@@ -22,10 +22,10 @@
     <body>
          @include('navbar')
         <div class="container">
-            <form class="form-inline" role="form"> 
+            <form class="form-inline" role="form" action="dologin" method="POST"> 
                 <h1>Log in</h1><br><br>
                 <label for="Username" class="mb-2 mr-sm-2">Username:</label><br>
-                <input type="text" name="username" class="form-control mb-2 mr-sm-2" placeholder="Enter Username" id="Username">
+                <input type="text" name="email" class="form-control mb-2 mr-sm-2" placeholder="Enter Username" id="Username">
                 <br><br>
                 <label for="password" class="mb-2 mr-sm-2">Password:</label><br>
                 <input type="text" name="password" class="form-control mb-2 mr-sm-2" placeholder="Enter Password" id="password">
