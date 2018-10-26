@@ -34,6 +34,8 @@ Route::post('/dologin','userController@login');
 Route::get('/space', function () {
     return view('working_space');
 });
+Route::post('/review','userController@review');
+
 Route::get('/profile/{id}','userController@userProfile');
 Route::post('/profile/update/{id}','userController@profileUpdate');
 

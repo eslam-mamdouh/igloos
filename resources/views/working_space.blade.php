@@ -260,11 +260,13 @@
                       </a>
                     
                       <button type="button" class="button-reviews" data-toggle="collapse" data-target="#leave">leave your Review</button>
-                      <div id="leave" class="collapse">
+                      <form id="leave" action="review" method="POST" class="collapse">
                         <br>
-                        <input type="text"placeholder="Review"  class="rev">
-                        <button class="send">save</button>
-                        </div>
+                        <input type="hidden" name="user_id" value="1">
+                        <input type="hidden" name="space_id" value="2">
+                        <input name="comment" type="text" placeholder="Review" class="rev">
+                        <button type="submit" class="send">save</button>
+                        </form>
                   </div>
               </div>
           </div>

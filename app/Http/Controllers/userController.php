@@ -65,4 +65,18 @@ class userController extends Controller
         
         return view('profile_settings' , ['user'=>$user]);
     }
+
+    public function review(Request $req){
+        $comment = $req->comment;
+        $id = $req->userid;
+        $space_id = $req->spaceid;
+
+        $review = new review;
+        $review->comment = $comment;
+        $review->user_id = $id;
+        $review->space_id = $space_id;
+
+        $review->save();
+        return redirect("/");
+    }
 }
