@@ -1,14 +1,3 @@
-<!--@extends('admin.master')
-@section('content')
-<div id="reviews">
-      @foreach ($reviews as $review )
-	<textarea id="comment" name="comment">
-		{{review->comment}}
-	</textarea>
-	<a href="review/{{$review->comment/deleteReview}}" class="btn btn-danger">Delete</a>
-	<hr>
-             @endforeach
-</div>-->
 @extends('admin.master')
 @section('content')
     <div class="row">
@@ -33,13 +22,25 @@
                     <div class="row">
                         <div class="col-sm-12">
                            
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <td>Comment</td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
                                     @foreach ($reviews as $review )
-                                    <textarea>
-                                    {{$review->comment}}
-                                </textarea>
+                                    <tr>
+                                        <td>{{$review->comment}}</td>
+                                    
+                                    <td>
                                      <a class="btn btn-danger" href="review/{{$review->id}}/deleteReview">delete</a>
+                                    </td>
+                                    </tr>
                                     @endforeach
-
+                                    </tbody>
+                                </table>
                             {{$reviews->links()}}
 
                         </div>

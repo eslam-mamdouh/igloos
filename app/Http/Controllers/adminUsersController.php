@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-
+use App\review;
 class adminUsersController extends Controller
 {
     //
@@ -29,7 +29,7 @@ class adminUsersController extends Controller
 
         if($id){
            $review->delete();
-           return redirect("/admin/spaces");
+           return redirect("/admin/reviews");
         }
         else{
             abort(404);
