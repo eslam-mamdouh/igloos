@@ -29,7 +29,7 @@ class adminUsersController extends Controller
 
         if($id){
            $review->delete();
-           return redirect("/admin/spaces");
+           return redirect("/admin/users");
         }
         else{
             abort(404);
