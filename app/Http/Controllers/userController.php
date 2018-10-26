@@ -6,10 +6,21 @@ use Illuminate\Http\Request;
 use App\User;
 use App\review;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 class userController extends Controller
 {
 
     public function signup(Request $req){
+
+        $this->validate($req,
+            [
+                'email'=>'required',
+                'password'=>'required|min:8',
+                'fname' =>'required|min:3',
+                'lname' =>'required|min:3',
+                'phone' =>'required|min:11|max:11',
+            ]
+            );
 
         $user = new User;
         $user->first_name = $req->fname;
@@ -19,19 +30,26 @@ class userController extends Controller
         $user->role = "client";
         $user->password = $req->password;
         $user->save();
+        Auth::login($user);
 
         return redirect("/");
 
     }
 
     public function login(Request $req){
+        $this->validate($req,
+            [
+                'email'=>'required|exists:users',
+                'password'=>'required|exists:users'
+            ]
+            );
         $email = $req->email;
         $pass = $req->password;
-        $user = User::where("email" , $email);
-        if(!$user){
-            abort(404);
+        $user = User::where("email" , $email)->where("password" , $pass)->get()->first();
+        if($user){
+            Auth::login($user);
+            return redirect("/");
         }
-        return redirect("/");
 
     }
 
