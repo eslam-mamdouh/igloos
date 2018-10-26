@@ -20,6 +20,7 @@ class Reviews extends Migration
             $table->string('comment');
             $table->integer('space_id')->unsigned();
             $table->foreign('space_id')->references('id')->on('spaces');
+            $table->timestamps();
         });
 
     }

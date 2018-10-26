@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\review;
 use Illuminate\Support\Facades\DB;
 class userController extends Controller
 {
@@ -67,9 +68,9 @@ class userController extends Controller
     }
 
     public function review(Request $req){
-        $comment = $req->comment;
-        $id = $req->userid;
-        $space_id = $req->spaceid;
+        $comment  = $req->comment;
+        $id       = $req->user_id;
+        $space_id = $req->space_id;
 
         $review = new review;
         $review->comment = $comment;
