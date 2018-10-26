@@ -48,7 +48,7 @@ Route::post('/register','/registerController@register');
 Route::post('/dosignup','userController@signup');
 Route::post('/dologin','userController@login');
 
-Route::get('/space', function () {
+Route::get('/space','userController@display_reviews_workspace', function () {
     return view('working_space');
 });
 Route::post('/review','userController@review');

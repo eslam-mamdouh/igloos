@@ -63,20 +63,22 @@ class userController extends Controller
     }
 
     public function get_all_users(){
+     
         $users = User::all();
         return view('homePage' , ['users' => $users]);
     }
 
-    public function userProfile($id){
+    public function userProfile($id){   
+        $reviews=review::all();
         $user = User::find($id);
         if(!$user){
             abort(404);
         }
-        return view('profile_settings' , ['user' => $user]);
+        return view('profile_settings' , ['user' => $user],compact('reviews'));
     }
 
     public function profileUpdate(Request $req , $id){
-
+       
         $user = User::find($id);
         if(!$user){
             abort(404);
@@ -105,6 +107,13 @@ class userController extends Controller
         $review->space_id = $space_id;
 
         $review->save();
-        return redirect("/");
+        return redirect("space");
+ 
     }
+
+public function display_reviews_workspace(){
+    $reviews=review::all();
+    return view('working_space',compact('reviews'));
+}
+
 }
