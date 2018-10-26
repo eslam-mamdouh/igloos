@@ -128,38 +128,15 @@
     <h5 style="float:left"> 12:06  </h5>
       <h6>  thoursday</h6>
     <br>
-    <p>my Reviews about this work space is .................... </p>
+    @foreach($reviews as $review)
+   <p> {{ $review->comment}}</p>
+      @endforeach
   </div>
   </div>
   <hr>
-  <div class="media" class="row">
-        <div class="media-left" class="col-md-6">
-            
-        <img src="images/galaxi.png" alt="Avatar" class="avatar"  class="img-circle" width="90px">
-        </div>
-        <div class="media-body"  class="col-md-6">
-              <br>
-          <h4 class="media-heading">Galaxi</h4>
-          <h5 style="float:left"> 12:06  </h5>
-      <h6>  thoursday</h6>
-      <br>
-          <p>my Reviews about this work space is ....................</p>
-        </div>
-        </div>
-        <hr>
-        <div class="media" class="row">
-                <div class="media-left" class="col-md-6">
-                <img src="images/galaxi.png" alt="Avatar" class="avatar" class="img-circle" width="90px">
-                </div>
-                <div class="media-body" class="col-md-6">
-                    <br>
-                  <h4 class="media-heading">Galaxi</h4>
-                  <h5 style="float:left"> 12:06  </h5>
-      <h6>  thoursday</h6>
-      <br>
-                  <p>my Reviews about this work space is ....................</p>
-                </div>
-                </div>
+
+        
+      
   </div>
   <div  class=" tab-pane fade" id="setting" role="tabpanel" aria-labelledby="setting-tab">
         <form method="POST" action="update/{{$user->id}}">

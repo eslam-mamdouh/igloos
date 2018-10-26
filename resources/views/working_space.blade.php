@@ -1,4 +1,5 @@
-
+@extends('master')
+@section('content')
 <html>
     <head>
             <meta charset="utf-8">
@@ -30,7 +31,7 @@
       <div class="container">
         <div class="row-profile">
             <div class="left-side col-sm-3">
-                <div  class="profile-sidebar" style="background-color:#212121;">
+                <div  class="profile-sidebar" style="background-color:#212121;left:0px;">
                     <div class="profile-userpic">
                       <img src="images/galaxi.png" class="img-circle" alt="" width="50px">
                     </div>
@@ -136,7 +137,11 @@
                           <div class="block-text rel zmin">
                             <a title="" href="#" class="reviewers">Ella Mentree</a>
                         <br>
-                          <p>Never before has there been a good film portrayal of ancient Greece's favourite myth. So why would Hollywood start now? This latest attempt at bringing the son of Zeus to the big screen is brought to us by X-Men: The last Stand director Brett Ratner. If the name of the director wasn't enough to dissuade ...</p>
+                        
+                         @foreach($reviews as $review)
+                           <p> {{ $review->comment}}</p>
+                          @endforeach
+                          
                         <ins class="ab zmin sprite sprite-i-triangle block"></ins>
                         </div>
                     <div class="person-text rel">
@@ -144,111 +149,7 @@
                   
                     </div>
                   </div>
-                        <div class="col-md-3 col-sm-3 hidden-xs">
-                      <div class="block-text rel zmin">
-                        <a title="" href="#" class="reviewers">Ella Mentree</a>
-                     <br>
-                          <p>The 2013 movie "The Purge" left a bad taste in all of our mouths as nothing more than a pseudo-slasher with a hamfisted plot, poor pacing, and a desperate attempt at "horror." Upon seeing the first trailer for "The Purge: Anarchy," my first and most immediate thought was "we really don't need another one of these."  </p>
-                            <ins class="ab zmin sprite sprite-i-triangle block"></ins>
-                          </div>
-                    <div class="person-text rel">
-                        <img src="images/avtar.png" class="img-circle" width="100px"/>
-                      
-                    </div>
-                  </div>
-                  <div class="col-md-3 col-sm-3 hidden-sm hidden-xs">
-                    <div class="block-text rel zmin">
-                      <a title="" href="#" class="reviewers">Ella Mentree</a>
-                     <br>
-                        <p>What a funny and entertaining film! I did not know what to expect, this is the fourth film in this vehicle's universe with the two Cars movies and then the first Planes movie. I was wondering if maybe Disney pushed it a little bit. However, Planes: Fire and Rescue is an entertaining film that is a fantastic sequel in this magical franchise. </p>
-                      <ins class="ab zmin sprite sprite-i-triangle block"></ins>
-                    </div>
-                    <div class="person-text rel">
-                        <img src="avtar.png" class="img-circle" width="100px"/>
-                   
-                     
-                    </div>
-                  </div>
-                          </div>
-                          <div class="item">
-                              <div class="col-md-3 col-sm-3">
-                          <div class="block-text rel zmin">
-                            <a title="" href="#" class="reviewers">Ella Mentree</a>
-                       <br>
-                          <p>Never before has there been a good film portrayal of ancient Greece's favourite myth. So why would Hollywood start now? This latest attempt at bringing the son of Zeus to the big screen is brought to us by X-Men: The last Stand director Brett Ratner. If the name of the director wasn't enough to dissuade ...</p>
-                        <ins class="ab zmin sprite sprite-i-triangle block"></ins>
-                        </div>
-                    <div class="person-text rel">
-                        <img src="avtar.png" class="img-circle" width="100px"/>
-                        
-                  
-                    </div>
-                  </div>
-                        <div class="col-md-3 col-sm-3 hidden-xs">
-                      <div class="block-text rel zmin">
-                        <a title="" href="#" class="reviewers">Ella Mentree</a>
-                        <br>
-                          <p>The 2013 movie "The Purge" left a bad taste in all of our mouths as nothing more than a pseudo-slasher with a hamfisted plot, poor pacing, and a desperate attempt at "horror." Upon seeing the first trailer for "The Purge: Anarchy," my first and most immediate thought was "we really don't need another one of these."  </p>
-                            <ins class="ab zmin sprite sprite-i-triangle block"></ins>
-                          </div>
-                    <div class="person-text rel">
-                        <img src="images/avtar.png" class="img-circle" width="100px"/>
-                         
-                      
-                    </div>
-                  </div>
-                  <div class="col-md-3 col-sm-3 hidden-sm hidden-xs">
-                    <div class="block-text rel zmin">
-                      <a title="" href="#" class="reviewers">Ella Mentree</a>
-                   <br>
-                        <p>What a funny and entertaining film! I did not know what to expect, this is the fourth film in this vehicle's universe with the two Cars movies and then the first Planes movie. I was wondering if maybe Disney pushed it a little bit. However, Planes: Fire and Rescue is an entertaining film that is a fantastic sequel in this magical franchise. </p>
-                      <ins class="ab zmin sprite sprite-i-triangle block"></ins>
-                    </div>
-                    <div class="person-text rel">
-                        <img src="avtar.png" class="img-circle" width="100px"/>
-                     
-                      
-                    </div>
-                  </div>
-                          </div>
-                          <div class="item">
-                              <div class="col-md-3 col-sm-3">
-                          <div class="block-text rel zmin">
-                            <a title="" href="#" class="reviewers">Ella Mentree</a>
-                       <br>
-                          <p>Never before has there been a good film portrayal of ancient Greece's favourite myth. So why would Hollywood start now? This latest attempt at bringing the son of Zeus to the big screen is brought to us by X-Men: The last Stand director Brett Ratner. If the name of the director wasn't enough to dissuade ...</p>
-                        <ins class="ab zmin sprite sprite-i-triangle block"></ins>
-                        </div>
-                    <div class="person-text rel">
-                        <img src="avtar.png" class="img-circle" width="100px"/>
-                      
-                   
-                    </div>
-                  </div>
-                        <div class="col-md-3 col-sm-3 hidden-xs">
-                      <div class="block-text rel zmin">
-                          <a title="" href="#" class="reviewers">Ella Mentree</a>
-                      <br>
-                          <p>The 2013 movie "The Purge" left a bad taste in all of our mouths as nothing more than a pseudo-slasher with a hamfisted plot, poor pacing, and a desperate attempt at "horror." Upon seeing the first trailer for "The Purge: Anarchy," my first and most immediate thought was "we really don't need another one of these."  </p>
-                            <ins class="ab zmin sprite sprite-i-triangle block"></ins>
-                          </div>
-                    <div class="person-text rel">
-                        <img src="images/avtar.png" class="img-circle" width="100px"/>
-                    </div>
-                  </div>
-                  <div class="col-md-3 col-sm-3 hidden-sm hidden-xs">
-                    <div class="block-text rel zmin">
-                      <a title="" href="#" class="reviewers">Ella Mentree</a>
-                     <br>
-                        <p>What a funny and entertaining film! I did not know what to expect, this is the fourth film in this vehicle's universe with the two Cars movies and then the first Planes movie. I was wondering if maybe Disney pushed it a little bit. However, Planes: Fire and Rescue is an entertaining film that is a fantastic sequel in this magical franchise. </p>
-                      <ins class="ab zmin sprite sprite-i-triangle block"></ins>
-                    </div>
-                    <div class="person-text rel">
-                        <img src="avtar.png" class="img-circle" width="100px"/>
-                      
-                  
-                    </div>
-                  </div>
+                       
                           </div>                    
                       </div>
                       <a class="left carousel-control" href="#carousel-reviews" role="button" data-slide="prev">
@@ -334,3 +235,4 @@
         <script  src="js\co-work space.js"></script>
     </body>
 </html>
+@endsection
