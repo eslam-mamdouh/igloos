@@ -25,8 +25,8 @@
                                             <tr>
                                                 <td>#ID</td>
                                                 <td>Review</td>
-                                                <td>User ID</td>
-                                                <td>Space Id</td>
+                                                <td>User</td>
+                                                <td>Space Name</td>
                                                 <td>Actions</td>
                                             </tr>
                                         </thead>
@@ -36,8 +36,8 @@
                                                 <tr>
                                                     <td>{{$rev->id}}</td>
                                                     <td>{{$rev->comment}}</td>
-                                                    <td>{{$rev->user_id}}</td>
-                                                    <td>{{$rev->space_id}}</td>
+                                                    <td>{{$rev->first_name.' '.$rev->last_name}}</td>
+                                                    <td>{{$rev->name}}</td>
                                                     <td>{{$rev->created_at}}</td>
                                                     <td>
                                                         <a class="btn btn-primary" href="space/{{$rev->id}}/edit">edit</a>
