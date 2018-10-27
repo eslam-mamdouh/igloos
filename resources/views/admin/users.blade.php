@@ -77,7 +77,7 @@
                     <h4 class="modal-title">Modal Header</h4>
                 </div>
                 <div class="modal-body">
-                   <form class="form" action="/admin/users/addUser" method="POST">
+                   <form class="form" action="users/addUser" method="POST">
                         @csrf
                         <div class="form-group">
                             <input type="text" class="form-control" name="fname" placeholder="Enter User First Name">
@@ -86,9 +86,6 @@
                             <input type="text" class="form-control" name="lname" placeholder="Enter User Last Name">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="username" placeholder="Enter Username">
-                        </div>
-                            <div class="form-group">
                             <input type="text" class="form-control" name="email" placeholder="Enter Email">
                         </div>
                             <div class="form-group">
@@ -98,7 +95,7 @@
                                 <input type="text" class="form-control" name="password" placeholder="Enter Password">
                         </div>
                         <div class="form-group">
-                                <input type="text" class="form-control" name="conpassword" placeholder="Re-Enter Password">
+                                <input type="text" class="form-control" name="role" placeholder="enter user role (ex: client , admin)">
                         </div>                        
 
                         <button type="submit" class="btn btn-success">Add</button>
