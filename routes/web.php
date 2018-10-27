@@ -12,7 +12,6 @@
 */
 
 
-
  Route::get('/', function () {
      return view('homePage');
  })->middleware('auth');
@@ -44,6 +43,12 @@ Route::get('/mohga', function () {
 Route::get('/reg', function () {
     return view('auth.register');
 });
+
+Route::get('/password', function () {
+    return view('send_email');
+});
+
+Route::post('/password/sendCode', 'MailController@send_code');
 
 Route::post('/register','/registerController@register');
 Route::post('/dosignup','userController@signup');

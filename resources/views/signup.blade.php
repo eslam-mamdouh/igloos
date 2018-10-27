@@ -20,9 +20,8 @@
   
     </head>
     <body>
-         @include('navbar')
         <div class="container">
-            <form class="form-inline" role="form" method="POST" action="/dosignup"> 
+            <form class="form" role="form" method="POST" action="/dosignup"> 
                 {{ csrf_field() }}
                 @if(count($errors) > 0)
                 @foreach($errors->all() as $error)
@@ -34,30 +33,26 @@
                 <div class="col-md-8 alert alert-success">{{@session('success')}}</div>
                 @endif
                 <h1>Sign Up</h1><br><br>
-                 <label for="firstName" class="mb-2 mr-sm-2">First Name:</label><br>
-                <input type="text" name="fname" class="form-control mb-2 mr-sm-2" placeholder="Enter First Name" id="firstName">
-                <br><br>
-                <label for="lastName" class="mb-2 mr-sm-2">Last Name:</label><br>
-                <input type="text"  name="lname" class="form-control mb-2 mr-sm-2" placeholder="Enter Last Name" id="lastName">
-                <br><br>
-                {{--  <label for="Username" class="mb-2 mr-sm-2">Username:</label><br>
-                <input type="text"  name="username" class="form-control mb-2 mr-sm-2" placeholder="Enter Username" id="Username">
-                <br><br>  --}}
-                <label for="email" class="mb-2 mr-sm-2">E-mail:</label><br>
-                <input type="email"  name="email" class="form-control mb-2 mr-sm-2" placeholder="Enter E-mail" id="email">
-                <br><br>
-                <label for="phone" class="mb-2 mr-sm-2">Phone:</label><br>
-                <input type="text" name="phone" class="form-control mb-2 mr-sm-2" placeholder="Enter your phone number" id="phone">
-                <br><br>
-                <label for="password" class="mb-2 mr-sm-2">Password:</label><br>
-                <input type="text"  name="password" class="form-control mb-2 mr-sm-2" placeholder="Enter Password" id="password">
-                <br><br>
-                {{--  <label for="conpassword" class="mb-2 mr-sm-2">Confirm-Password:</label><br>
-                <input type="text" name="Conpassword" class="form-control mb-2 mr-sm-2" placeholder="Re-Enter Password" id="conpassword">
-                <br><br>  --}}
+                 <div class="form-group">
+                    <input type="text" name="fname" class="form-control" placeholder="Enter First Name" id="firstName">
+                </div>
+                <div class="form-group">
+                    <input type="text"  name="lname" class="form-control" placeholder="Enter Last Name" id="lastName">
+                </div>
+                
+                <div class="form-group">
+                    <input type="email"  name="email" class="form-control" placeholder="Enter E-mail" id="email">
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" name="phone" class="form-control" placeholder="Enter your phone number" id="phone">
+                </div>
+                
+                <div class="form-group">
+                    <input type="text"  name="password" class="form-control" placeholder="Enter Password" id="password">
+                </div>
                 <button type="submit" class="btn btn-default" id="btn-login">Sign up</button>
             </form>
         </div>
-         @include('footer')
     </body>
 </html>

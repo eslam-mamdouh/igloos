@@ -47,8 +47,10 @@ class adminSpacesController extends Controller
     }
 
     public function getReviews(){
-        $reviews = review::join('users' ,'reviews.id' , '=','users.id')
-        ->join('spaces' , 'spaces.id' , '=' , 'reviews.id')->paginate(5);
+        $reviews = review::join('users' ,'reviews.user_id' , '=','users.id')
+        ->join('spaces' , 'spaces.id' , '=' , 'reviews.space_id')->paginate(5);
+
+        return $reviews;
         return view('admin.reviews' , ['reviews'=>$reviews]);
     }
 }

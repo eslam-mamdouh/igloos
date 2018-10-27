@@ -20,29 +20,6 @@
                 <div class="row">
                     <div class="row">
                         <div class="col-sm-12">
-<<<<<<< HEAD
-                           
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <td>Comment</td>
-                                        <td></td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($reviews as $review )
-                                    <tr>
-                                        <td>{{$review->comment}}</td>
-                                    
-                                    <td>
-                                     <a class="btn btn-danger" href="review/{{$review->id}}/deleteReview">delete</a>
-                                    </td>
-                                    </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            {{$reviews->links()}}
-=======
                                 <table class="table table-hover">
                                         <thead>
                                             <tr>
@@ -50,6 +27,7 @@
                                                 <td>Review</td>
                                                 <td>User</td>
                                                 <td>Space Name</td>
+                                                <td>Created at</td>
                                                 <td>Actions</td>
                                             </tr>
                                         </thead>
@@ -63,8 +41,8 @@
                                                     <td>{{$rev->name}}</td>
                                                     <td>{{$rev->created_at}}</td>
                                                     <td>
-                                                        <a class="btn btn-primary" href="space/{{$rev->id}}/edit">edit</a>
-                                                        <a class="btn btn-danger" href="space/{{$rev->id}}/delete">delete</a>
+                                                        <a class="btn btn-warning" href="space/{{$rev->id}}/edit">Disable</a>
+                                                        <a class="btn btn-danger" href="space/{{$rev->id}}/delete">Delete</a>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -73,7 +51,6 @@
         
                                     </table>
                                     {{$reviews->links()}}
->>>>>>> 35a9be1a99cc5716d5d0addf82ab6d99f17f13c6
 
                         </div>
                     </div>

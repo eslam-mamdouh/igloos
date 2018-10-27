@@ -1,0 +1,406 @@
+*, html {
+    margin: 0;
+}
+
+#topNavbar {
+    overflow: hidden;
+    background-color: #212121;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 69px;
+    z-index: 1000;
+    transition: .3s;
+}
+
+.navbar-btns .logo{
+    width: 150px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+#defbtn {
+    float: right;
+    display: block;
+    color: white;
+    border: none;
+    background: none;
+    padding: 4px 14px;
+    margin-top: 20px;
+    margin-right: 30px;
+    font-family: 'Ubuntu';
+    font-size: 15px;
+    transition: .3s; 
+    letter-spacing: 1px;
+}
+
+#defbtn:hover {
+    cursor: pointer;
+}
+
+#signupbtn {
+    float: right;
+    display: block;
+    color: white;
+    border: none;
+    background-color: #1DE9B6;
+    border-radius: 20px;
+    padding: 4px 14px;
+    margin-top: 20px;
+    margin-right: 40px;
+    font-family: 'Ubuntu';
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: .3s; 
+}
+
+#signupbtn:hover {
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+#theForm {
+    background-color: white;
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    float: left;
+    display: flex;
+}
+
+#formBase {
+    background-color: #212121;
+    border-radius: 20px;
+    width: 500px;
+    height: 350px;
+    margin:0 auto;
+    margin-top: 110px;
+    font-family: 'Ubuntu';
+    font-size: 19px;
+}
+
+#email {
+    width: 60px;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 218px;
+}
+
+#form-header-1 {
+    margin-left: 128px;
+    margin-top: 30px;
+    color: white;
+    font-family: 'Ubuntu';
+    font-size: 17px;
+}
+
+#form-header-2 {
+    margin-left: 123px;
+    margin-top: 5px;
+    color: white;
+    font-family: 'Ubuntu';
+    font-size: 17px;
+}
+
+#textArea {
+    border: 0;
+    outline: 0;
+    width: 60%;
+    padding: 7px;
+    border-bottom: 1px solid #1DE9B6;
+    background: transparent;
+    margin-left: 95px;
+    margin-top: 30px; 
+    margin-bottom: 10px;
+    height: 25px;
+    color: #1DE9B6;
+}
+
+#textArea:focus {
+    color: #1DE9B6;
+    font-family: 'Ubuntu';
+    font-size: 19px;
+}
+
+#sendBtn {
+    float: right;
+    display: block;
+    color: #1DE9B6;
+    border: 2px solid #1DE9B6;
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 4px 14px;
+    margin-top: 30px;
+    margin-right: 180px;
+    font-family: 'Ubuntu';
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+#sendBtn:hover {
+    cursor: pointer;
+}
+
+#formBtn {
+    color: #1DE9B6;
+    font-family: 'Ubuntu';
+    background-color: transparent;
+    display: block;
+    text-decoration: none;
+}
+
+#formBtn:hover {
+    cursor: pointer;
+    transition: .3s;
+}
+
+.bottomNavbar {
+    background-color: #212121;
+    display: block;
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    float: left;
+}
+
+.bottomNavbar .pages {
+    width: 300px;
+    height: 100px;
+    text-align: center;
+    float: left;
+    margin-top: 40px;
+    margin-left: 190px;  
+}
+
+.bottomNavbar p.hdln {
+    color: white;
+    font-family: 'Ubuntu';
+    font-size: 19px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.bottomNavbar button.bottomButtons {
+    color: white;
+    font-family: 'Ubuntu';
+    font-size: 15;
+    margin-bottom: 5px;
+    margin-left: 102px;
+    display: block;
+    background-color: transparent;
+    text-decoration: none;
+    border: none;
+}
+
+.bottomNavbar button.bottomButtons:hover {
+    color: #1DE9B6;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.bottomNavbar a.bottomButtons {
+    color: white;
+    font-family: 'Ubuntu';
+    display: block;
+    background-color: transparent;
+    text-decoration: none;
+    border: none;
+}
+
+.bottomNavbar a.bottomButtons:hover {
+    color: #1DE9B6;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.bottomNavbar .Contact-Us {
+    width: 400px;
+    height: 201px;
+    text-align: center;
+    float: left;
+    padding: 30px;
+    margin-left: 38px;
+}
+
+.Contact-Us p.headline1 {
+    color: white;
+    font-size: 27px;
+    font-family: 'Ubuntu';
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+}
+
+.Contact-Us p.headline2 {
+    color: #1DE9B6;
+    font-size: 21px;
+    font-family: 'Ubuntu';
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+#contact-links {
+    margin-bottom: 5px;
+}
+
+.Contact-Us ul.links {
+    padding: 10px;
+}
+
+.Contact-Us ul a.contact-link-1 {
+    display: inline-block;
+    position: relative;
+    color: white;
+    font-family: 'ubuntu';
+    letter-spacing: 1px;
+    text-decoration: underline;
+}
+
+.Contact-Us ul a.contact-link-1:hover {
+    color: #1DE9B6;
+    text-decoration: underline;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.Contact-Us ul a.contact-link-2 {
+    display: inline-block;
+    position: relative;
+    color: white;
+    font-family: 'ubuntu';
+    letter-spacing: 1px;
+    text-decoration: unset;
+}
+
+.Contact-Us ul a.contact-link-2:hover {
+    color: #1DE9B6;
+    text-decoration: none;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.Contact-Us p.headline3 {
+    color: white;
+    font-size: 27px;
+    font-family: 'Ubuntu';
+    letter-spacing: 1px;
+    margin-top: 2px;
+    margin-bottom: 3px;
+}
+
+#icons {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    padding: 20px;
+    margin-top: 5px;
+}
+
+.bottomNavbar a.fa {
+    background-color: transparent;
+    color: white;
+    width: 50px;
+    height: 30px;
+    margin: 10px;
+    float: unset;
+}
+
+.bottomNavbar a.fa:hover {
+    color: #1DE9B6;
+    transition: .3s;
+}
+
+.bottomNavbar.feedback-section {
+    display: inline-block;
+    width: 400px;
+    height: 260px;
+}
+
+.bottomNavbar .feedback-form {
+    display: inline-block;
+    width: 340px;
+    height: 220px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 80px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    font-family: 'Ubuntu';
+    font-size: 19px;
+}
+
+.bottomNavbar input.textArea {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    padding: 7px;
+    border-bottom: 1px solid white;
+    background: transparent;
+    margin-bottom: 10px;
+    height: 25px;
+}
+
+.bottomNavbar input:focus {
+    color: white;
+    font-family: 'Ubuntu';
+    font-size: 15px;
+}
+
+.bottomNavbar button.submit-btn {
+    position: relative;
+    display: block;
+    background-color: #1DE9B6;
+    color: white;
+    width: 130px;
+    height: 40px;
+    padding: 8px 18px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+}
+
+.bottomNavbar button.submit-btn:hover {
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+
+.page-footer {
+    background-color: #FFC400;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 80px;
+    left: 0;
+    float: left;
+}
+
+.page-footer p {
+    color: #212121;
+    z-index: 100;
+    text-align: center;
+    font-family: 'ubuntu';
+    letter-spacing: 3px;
+    padding: 29px;
+}
+
+.page-footer .bottom-logo{
+    width: 150px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 40px;
+    float: right;
+}

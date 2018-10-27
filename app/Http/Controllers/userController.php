@@ -10,6 +10,24 @@ use Illuminate\Support\Facades\Auth;
 class userController extends Controller
 {
 
+    public function send_code(){
+        $user = User::where("email",'e.mamdouh3@gmai.com')->first();
+        if(!$user){
+            abort(404);
+        }
+        $code = rand(100000 , 999999);
+        $user->token = $code;
+        $user->update();
+        sesion(["code"=>$code]);
+        $data = array('name'=>"Eslam");
+        Mail::send('code', $data, function($message) {
+           $message->to('e.mamdouh3@gmail.com', $user->first_name)->subject
+              ('Verfication Code');
+           $message->from('droidk00@gmail.com','Igloos');
+        });
+        echo "HTML Email Sent. Check your inbox.";
+     }
+
     public function logout(){
         Auth::logout();
         return view('login');
