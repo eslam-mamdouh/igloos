@@ -77,20 +77,30 @@
                     <h4 class="modal-title">Modal Header</h4>
                 </div>
                 <div class="modal-body">
-                   <form class="form" action="/admin/spaces/add" method="POST">
+                   <form class="form" action="/admin/users/addUser" method="POST">
                         @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control" name="name" placeholder="Enter Space Name">
+                            <input type="text" class="form-control" name="fname" placeholder="Enter User First Name">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="user_name" placeholder="Enter User Name">
+                            <input type="text" class="form-control" name="lname" placeholder="Enter User Last Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username" placeholder="Enter Username">
+                        </div>
+                            <div class="form-group">
+                            <input type="text" class="form-control" name="email" placeholder="Enter Email">
+                        </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="phone" placeholder="Enter Phone">
                         </div>
                         <div class="form-group">
                                 <input type="text" class="form-control" name="password" placeholder="Enter Password">
                         </div>
                         <div class="form-group">
-                                <input type="text" class="form-control" name="description" placeholder="Enter description">
-                        </div>
+                                <input type="text" class="form-control" name="conpassword" placeholder="Re-Enter Password">
+                        </div>                        
+
                         <button type="submit" class="btn btn-success">Add</button>
                    </form>
                 </div>

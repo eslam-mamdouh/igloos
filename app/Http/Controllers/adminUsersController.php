@@ -35,4 +35,29 @@ class adminUsersController extends Controller
             abort(404);
         }
     }
+
+    public function addUser(Request $req){
+                $this->validate($req,
+            [
+                'first_name'=>'required',
+                'last_name'=>'required',
+                'username'=>'required|unique:users',
+                'email'=>'required|unique:users',
+                'phone'=>'required',
+                'password'=>'required',
+                'conpassword'=>'required'
+            ]
+        );
+        $user = new User;
+        $user->first_name = $req->fname;
+        $user->last_name = $req->lname;
+        $user->username = $req->username;
+        $user->email = $req->email;
+        $user->phone = $req->phone;
+        $user->password = $req->password;
+        $user->conpassword = $req->conpassword;
+        $user->save();
+        return redirect('/admin/users');
+
+    }
 }
