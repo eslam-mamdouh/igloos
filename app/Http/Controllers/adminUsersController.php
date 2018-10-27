@@ -29,14 +29,37 @@ class adminUsersController extends Controller
 
         if($id){
            $review->delete();
-<<<<<<< HEAD
+
            return redirect("/admin/reviews");
-=======
-           return redirect("/admin/users");
->>>>>>> 35a9be1a99cc5716d5d0addf82ab6d99f17f13c6
+
         }
         else{
             abort(404);
         }
+    }
+
+    public function addUser(Request $req){
+                $this->validate($req,
+            [
+                'first_name'=>'required',
+                'last_name'=>'required',
+                'username'=>'required|unique:users',
+                'email'=>'required|unique:users',
+                'phone'=>'required',
+                'password'=>'required',
+                'conpassword'=>'required'
+            ]
+        );
+        $user = new User;
+        $user->first_name = $req->fname;
+        $user->last_name = $req->lname;
+        $user->username = $req->username;
+        $user->email = $req->email;
+        $user->phone = $req->phone;
+        $user->password = $req->password;
+        $user->conpassword = $req->conpassword;
+        $user->save();
+        return redirect('/admin/users');
+
     }
 }

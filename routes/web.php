@@ -33,6 +33,7 @@ Route::get('/admin/user/{id}/delete', 'adminUsersController@delete')->middleware
 Route::get('/admin/spaces', 'adminSpacesController@getSpaces')->middleware('auth');
 Route::get('/admin/reviews', 'adminSpacesController@getReviews')->middleware('auth');
 Route::post('/admin/spaces/add', 'adminSpacesController@addSpace')->middleware('auth');
+Route::post('/admin/users/addUser', 'adminUsersController@addUser')->middleware('auth');
 Route::get('/admin/space/{id}/delete', 'adminSpacesController@delete')->middleware('auth');
 Route::get('/admin/review/{id}/deleteReview', 'adminUsersController@deleteReview')->middleware('auth');
 
