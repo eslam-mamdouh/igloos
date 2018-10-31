@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Igloos | Admin Panel</title>
+    <title>Igloos | Admin Space</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -82,7 +82,7 @@
             </li>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i> {{Auth::user()->first_name}} <b class="caret"></b>
+                    <i class="fa fa-user fa-fw"></i>{{session('user')->first_name}} <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
@@ -115,13 +115,13 @@
                         <a href="#" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="/admin/spaces"> <i class="fa fa-home fa-fw"></i> Working Spaces</a>
+                        <a href="/space-admin/images"> <i class="fa fa-sitemap fa-fw"></i> My Images </a>
                     </li>
                     <li>
-                        <a href="/admin/users"> <i class="fa fa-user fa-fw"></i> All Users</a>
+                        <a href="/space-admin/reviews"> <i class="fa fa-comment fa-fw"></i> The Reviews</a>
                     </li>
                     <li>
-                        <a href="/admin/reviews"> <i class="fa fa-comment fa-fw"></i> All Reviews</a>
+                        <a href="/space-admin/reservations"> <i class="fa fa-comment fa-bell"></i> Reservations</a>
                     </li>
                     <!-- <li>
                         <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
@@ -150,6 +150,7 @@
         <div class="container-fluid">
 
             @yield('content')
+            
 
         </div>
     </div>

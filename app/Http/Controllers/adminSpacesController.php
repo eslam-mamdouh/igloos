@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\space;
+use App\User;
 use App\review;
+use App\Mail\spaceMail;
+use Mail;
+use Illuminate\Support\Facades\Auth;
 class adminSpacesController extends Controller
 {
     //
@@ -20,16 +24,18 @@ class adminSpacesController extends Controller
             [
                 'name'=>'required',
                 'user_name'=>'required|unique:spaces',
-                'description'=>'required',
-                'password'=>'required'
             ]
         );
         $space = new space;
         $space->name = $req->name;
         $space->user_name = $req->user_name;
-        $space->description = $req->description;
-        $space->password = $req->password;
+        $space->email = $req->email;
+        $space->description = "replace this text with your desription.";
+        $space->password = rand(100000,999999);
+        $space->profile_img = "images/spaces/avatar/avatar.jpg";
         $space->save();
+        session(['name'=>$space->name , 'user'=>$space->user_name ,'password'=>$space->password]);
+        Mail::to($space->email)->send(new spaceMail);
         return redirect('/admin/spaces');
     }
 
@@ -49,8 +55,7 @@ class adminSpacesController extends Controller
     public function getReviews(){
         $reviews = review::join('users' ,'reviews.user_id' , '=','users.id')
         ->join('spaces' , 'spaces.id' , '=' , 'reviews.space_id')->paginate(5);
-
-        return $reviews;
         return view('admin.reviews' , ['reviews'=>$reviews]);
     }
+
 }

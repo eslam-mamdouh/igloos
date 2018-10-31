@@ -22,14 +22,16 @@
     <body>
          {{--  @include('navbar')  --}}
         <div class="container">
-            <form class="form-inline" role="form" action="dologin" method="POST"> 
+            <form class="form-inline" role="form" action="/space/login" method="POST"> 
                 @csrf
-                <h1>Log in</h1><br><br>
+                <h1>Login to</h1>
+                <p style="color:orange">Working Space</p>
+                <br>
                 <label for="Username" class="mb-2 mr-sm-2">Username:</label><br>
-                <input type="text" name="email" class="form-control mb-2 mr-sm-2" placeholder="Enter Username" id="Username">
-                @if ($errors->has('email'))
+                <input type="text" name="user_name" class="form-control mb-2 mr-sm-2" placeholder="Enter Space Username" id="Username">
+                @if ($errors->has('user_name'))
                     <p style="color:red" class="invalid-feedback danger" role="alert">
-                        <strong>{{ $errors->first('email') }}</strong>
+                        <strong>{{ $errors->first('user_name') }}</strong>
                     </p>
                 @endif
                 <br><br>
@@ -46,9 +48,6 @@
                 </div>
                 <br><br>
                 <button class="btn btn-default" id="btn-login">Log in</button>
-                <a href="#">Forget Your Password</a>
-                <br><br>
-                <a id="signup-link" href="#">Sign up</a>
             </form>
         </div>
          {{--  @include('footer')  --}}

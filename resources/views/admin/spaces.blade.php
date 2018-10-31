@@ -86,11 +86,8 @@
                             <input type="text" class="form-control" name="user_name" placeholder="Enter User Name">
                         </div>
                         <div class="form-group">
-                                <input type="text" class="form-control" name="password" placeholder="Enter Password">
-                        </div>
-                        <div class="form-group">
-                                <input type="text" class="form-control" name="description" placeholder="Enter description">
-                        </div>
+                                <input type="text" class="form-control" name="email" placeholder="Enter Email">
+                            </div>
                         <button type="submit" class="btn btn-success">Add</button>
                    </form>
                 </div>

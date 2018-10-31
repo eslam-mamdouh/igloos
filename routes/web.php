@@ -24,6 +24,9 @@ Route::get('/signup', function () {
     return view('signup');
 });
 
+Route::get('/space/login', function () {
+    return view('spaceLogin');
+});
 Route::get('/logout', 'userController@logout');
 
 Route::get('/admin/users', 'adminUsersController@getUsers')->middleware('auth');
@@ -35,6 +38,17 @@ Route::post('/admin/spaces/add', 'adminSpacesController@addSpace')->middleware('
 Route::post('/admin/users/addUser', 'adminUsersController@addUser')->middleware('auth');
 Route::get('/admin/space/{id}/delete', 'adminSpacesController@delete')->middleware('auth');
 Route::get('/admin/review/{id}/deleteReview', 'adminUsersController@deleteReview')->middleware('auth');
+
+Route::post('/space/login', 'spaceAdminController@login');
+Route::get('/space-admin', 'spaceAdminController@dash');
+Route::get('/space-admin/images', 'spaceAdminController@getImages');
+Route::get('/space-admin/reviews', 'spaceAdminController@getReviews');
+Route::get('/space-admin/reservations', 'spaceAdminController@getReservations');
+Route::post('/space-admin/images/upload', 'spaceAdminController@upload');
+Route::get('/space-admin/images/{id}/delete', 'spaceAdminController@deleteImage');
+
+
+
 
 Route::get('/mohga', function () {
     $reviews = App\review::all();
@@ -49,7 +63,7 @@ Route::get('/password', function () {
     return view('send_email');
 });
 
-Route::post('/password/sendCode', 'MailController@send_code');
+Route::get('/password/sendCode', 'userController@send_code');
 
 Route::post('/register','/registerController@register');
 Route::post('/dosignup','userController@signup');
