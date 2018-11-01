@@ -77,7 +77,7 @@ Route::post('/review','userController@review');
 Route::get('/profile/{id}','userController@userProfile');
 Route::post('/profile/update/{id}','userController@profileUpdate');
 
-
+Route::post('/space','userController@reservation_data');
 
 Auth::routes();
 

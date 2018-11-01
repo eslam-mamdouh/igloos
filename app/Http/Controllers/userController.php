@@ -138,4 +138,20 @@ public function display_reviews_workspace(){
     return view('working_space',compact('reviews'));
 }
 
+public function reservation_data(Request $request ){
+ $reservations= new \App\reservation;
+$reservations->user_id    =$request->user_id;
+$reservations->space_id   =$request->space_id;
+$reservations->name       =$request->name;
+$reservations->people_num =$request->people_num;
+$reservations->place      =$request->place;
+$reservations->date       =$request->date;
+$reservations->time       =$request->time;
+
+$reservations-> save();
+return redirect("space");
+
+
+}
+
 }

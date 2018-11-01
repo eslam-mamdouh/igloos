@@ -15,12 +15,13 @@ class Reservations extends Migration
     {
          Schema::create('reservations', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
             $table->date('date');
             $table->time('time');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('people_num');
-            $table->integer('room_num');
+            $table->string('place');
             $table->integer('space_id');
             $table->timestamps();
         });

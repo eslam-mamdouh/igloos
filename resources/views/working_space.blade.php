@@ -8,23 +8,14 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-        <link rel="stylesheet" type="text/css" href="css\working_space.css">
+        <link rel="stylesheet" type="text/css" href="\css\working_space.css">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
        
     </head>
     <body  data-spy="scroll" data-target="#myScrollspy" data-offset="20">
       <!--------------------------------- base navbar-------------------------------------------------------------->
              
-    <div id="topNavbar">
-        <div id="Logo"></div>
-             <div class="navbar-btns">
-                <img src="images/IGLOOS-logo-white.png" alt="IGLOOS" class="logo">
-                <button class="btn" id="signupbtn" href="#signup-form">Sign Up</button>
-                <button class="btn" id="defbtn" href="#login-form">Login</button>
-                <button class="btn" id="defbtn" href="#clients-section">Clients</button>
-                <button class="btn" id="defbtn" href="#about-section">About</button>
-             </div>
-    </div>
+    
       <!----------------------------------------------------------------------------------------------------------->
     
       <!----------------------------------------navbar left---------------------------------------------------------------->
@@ -33,7 +24,7 @@
             <div class="left-side col-sm-3">
                 <div  class="profile-sidebar" style="background-color:#212121;left:0px;">
                     <div class="profile-userpic">
-                      <img src="images/galaxi.png" class="img-circle" alt="" width="50px">
+                      <img src="\images\galaxi.png" class="img-circle" alt="" width="50px">
                     </div>
                   
                     <div class="profile-usertitle">
@@ -189,16 +180,19 @@
  <h1 style="margin-left: 100px;">Booking</h1>
   
 <br>
-  <form name="myform"  onsubmit="return check()">
+  <form name="myform"  onsubmit="return check()" method="POST" action="/space">
+  @csrf
+  <input type="hidden" name="user_id" value="1">
+  <input type="hidden" name="space_id" value="1">
           <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"  ></i></span>
-      <input type="text" placeholder="Name" class="form-control" name="Name"> 
+      <input type="text" placeholder="Name" class="form-control" name="name"> 
       </div>
       <br>
       <div class="input-group">
 
       <span class="input-group-addon"><i class="fa fa-users fa "></i></span>
-      <input type="number" placeholder="Number Of Individuals" class="form-control" name="number" >
+      <input type="number" placeholder="Number Of Individuals" class="form-control" name="people_num" >
     </div>
    <br>
      <div class="input-group">
@@ -211,25 +205,27 @@
       <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
        <input type="time" class="form-control" name="time" >
   </div>
+
   <br>
    <div class="btn-group sellect" role="group" >
-      <button type="button" class="btn btn-default">out</button>
-      <button type="button" class="btn btn-default">Room</button>
-      <button type="button" class="btn btn-default">Balkon</button>
+
+      <input type="botton" class="btn btn-default" name="place" value="Out" >
+      <input type="botton" class="btn btn-default" name="place" value="Room">
+      <input type="botton" class="btn btn-default"name="place" value="Balkon">
     </div>
- 
-      <button class="button" style=" margin-left: 750px;"> Book </i></button>
+    <div>
+    <input type="hidden" name="user_id" value="1">
+    <input type="hidden" name="space_id" value="1">
+      <button class="button" type="submit" style=" margin-left: 750px;"> Book </i></button>
+ </div>
   </form>
 </div>
 </div>
 </div>
 </div>
 </div>
+<!---------------------------------------------------------------------------------------------------------------->
 
-
-<footer class="page-footer"> 
-    <p class="footer-txt1">Lovingly crafted in Cairo, EG.</p>
-</footer>
 
 <!-------------------------------------------------------------------------------------------------------------------------------------------------->
         <script  src="js\co-work space.js"></script>

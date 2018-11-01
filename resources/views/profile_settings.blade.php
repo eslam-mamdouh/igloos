@@ -1,26 +1,26 @@
 
 @extends('master')
 @section('content')
-        
-    <div id="topNavbar">
-            <div id="Logo"></div>
-                 <div class="navbar-btns">
-                    <img src="IGLOOS-logo-white.png" alt="IGLOOS" class="logo">
-                    <button class="btn" id="signupbtn" href="#signup-form">Sign Up</button>
-                    <button class="btn" id="defbtn" href="#login-form">Login</button>
-                    <button class="btn" id="defbtn" href="#clients-section">Clients</button>
-                    <button class="btn" id="defbtn" href="#about-section">About</button>
-                 </div>
-        </div>
-    
-                </div>
-           
+<html>
+    <head>
+  
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="\css\profile_settings.css">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    </head>
+      <body id ="profile">     
 <div class="container emp-profile">
         <form method="post">
             <div class="row">
                 <div class="col-md-4">
                     <div class="profile-img">
-                        <img src="images/images.jpg" alt="" class="img-circle"/>
+                        <img src="\images\images.jpg" alt="sorry" class="img-circle"/>
                         <button class="btn_"><i class="fa fa-camera"></i>
                      <input type="file"class="file form-control-file">  </button> 
                     </div>
@@ -120,7 +120,7 @@
                             
       <div class="media" class="row">
   <div class="media-left"class="col-md-6">
-  <img src="images/galaxi.png" alt="Avatar" class="avatar" class="img-circle" width="90px">
+  <img src="\images\galaxi.png" alt="Avatar" class="avatar" class="img-circle" width="90px">
   </div>
   <div class="media-body" class="col-md-6">
       <br>
@@ -188,4 +188,6 @@
                     </div>
                 </form> 
                 </div>
+</body>
+                </html>
 @endsection

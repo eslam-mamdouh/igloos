@@ -1,5 +1,5 @@
-body{
-    background: -webkit-linear-gradient(left, #121212, #383737);
+#profile{
+    background: -webkit-linear-gradient(left, #121212, #383737);*/
 }
 /*********************************************/
 #topNavbar {
@@ -145,7 +145,7 @@ h3{
 font-family:'Ubuntu';
 color: #ffc400;
 }
-a{
+#Favorites{
     color: #121212;
     text-decoration: none;
 }
